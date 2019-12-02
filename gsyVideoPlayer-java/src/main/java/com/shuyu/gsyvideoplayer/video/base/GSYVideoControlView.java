@@ -192,20 +192,31 @@ public abstract class GSYVideoControlView extends GSYVideoView implements View.O
 
     protected void init(Context context) {
         super.init(context);
-
+        //播放按键  View
         mStartButton = findViewById(R.id.start);
-        mTitleTextView = (TextView) findViewById(R.id.title);
-        mBackButton = (ImageView) findViewById(R.id.back);
-        mFullscreenButton = (ImageView) findViewById(R.id.fullscreen);
-        mProgressBar = (SeekBar) findViewById(R.id.progress);
-        mCurrentTimeTextView = (TextView) findViewById(R.id.current);
-        mTotalTimeTextView = (TextView) findViewById(R.id.total);
-        mBottomContainer = (ViewGroup) findViewById(R.id.layout_bottom);
-        mTopContainer = (ViewGroup) findViewById(R.id.layout_top);
-        mBottomProgressBar = (ProgressBar) findViewById(R.id.bottom_progressbar);
-        mThumbImageViewLayout = (RelativeLayout) findViewById(R.id.thumb);
-        mLockScreen = (ImageView) findViewById(R.id.lock_screen);
-
+        //title  TextView
+        mTitleTextView = findViewById(R.id.title);
+        //返回按键  ImageView
+        mBackButton = findViewById(R.id.back);
+        //全屏按键  ImageView
+        mFullscreenButton = findViewById(R.id.fullscreen);
+        //进度条  SeekBar
+        mProgressBar = findViewById(R.id.progress);
+        //当前进度时间显示  TextView
+        mCurrentTimeTextView =findViewById(R.id.current);
+        //总时长显示  TextView
+        mTotalTimeTextView = findViewById(R.id.total);
+        //底部区域显示  ViewGroup
+        mBottomContainer = findViewById(R.id.layout_bottom);
+        //顶部区域显示  ViewGroup
+        mTopContainer =  findViewById(R.id.layout_top);
+        //底部进度条   ProgressBar
+        mBottomProgressBar =findViewById(R.id.bottom_progressbar);
+        //封面父布局  RelativeLayout
+        mThumbImageViewLayout = findViewById(R.id.thumb);
+        //锁定图标   ImageView
+        mLockScreen = findViewById(R.id.lock_screen);
+        //加载中   View
         mLoadingProgressBar = findViewById(R.id.loading);
 
 

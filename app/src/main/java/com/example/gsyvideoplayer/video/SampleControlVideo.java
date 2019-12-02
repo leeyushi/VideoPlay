@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.gsyvideoplayer.DetailControlActivity;
 import com.example.gsyvideoplayer.R;
+import com.example.mypubliclibrary.util.SelectorUtils;
 import com.shuyu.gsyvideoplayer.utils.GSYVideoType;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 import com.shuyu.gsyvideoplayer.video.base.GSYBaseVideoPlayer;
@@ -63,7 +65,7 @@ public class SampleControlVideo extends StandardGSYVideoPlayer {
         mMoreScale = (TextView) findViewById(R.id.moreScale);
         mChangeRotate = (TextView) findViewById(R.id.change_rotate);
         mChangeTransform = (TextView) findViewById(R.id.change_transform);
-
+        mDetailControlActivity= (DetailControlActivity) getContext();
         //切换清晰度
         mMoreScale.setOnClickListener(new OnClickListener() {
             @Override
@@ -232,6 +234,8 @@ public class SampleControlVideo extends StandardGSYVideoPlayer {
         mTextureView.requestLayout();
     }
 
+    private DetailControlActivity mDetailControlActivity;
+
     /**
      * 显示比例
      * 注意，GSYVideoType.setShowType是全局静态生效，除非重启APP。
@@ -240,6 +244,10 @@ public class SampleControlVideo extends StandardGSYVideoPlayer {
         if (!mHadPlay) {
             return;
         }
+        mMoreScale.setBackground(SelectorUtils.newShapeSelector().setDefaultStrokeColor(mDetailControlActivity.getResourcesColor(R.color.colorWhite))
+                .setStrokeWidth(mDetailControlActivity.getDP(1))
+                .setCornerRadius(new float[]{mDetailControlActivity.getDP(120)}).create());
+        mMoreScale.setTextColor(getResources().getColor(R.color.colorAccent));
         if (mType == 1) {
             mMoreScale.setText("16:9");
             GSYVideoType.setShowType(GSYVideoType.SCREEN_TYPE_16_9);
