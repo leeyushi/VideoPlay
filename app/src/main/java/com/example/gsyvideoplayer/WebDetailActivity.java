@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.gsyvideoplayer.video.PreViewGSYVideoPlayer;
 import com.example.gsyvideoplayer.view.ScrollWebView;
+import com.example.mypubliclibrary.base.bean.EventMsg;
 import com.shuyu.gsyvideoplayer.GSYBaseActivityDetail;
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder;
 import com.shuyu.gsyvideoplayer.utils.GSYVideoType;
@@ -42,9 +43,17 @@ public class WebDetailActivity extends GSYBaseActivityDetail<StandardGSYVideoPla
     private int backupRendType;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_web_detail);
+    public void onEvent(EventMsg message) {
+
+    }
+
+    @Override
+    protected int onRegistered() {
+        return R.layout.activity_web_detail;
+    }
+
+    @Override
+    protected void initView() {
         ButterKnife.bind(this);
 
         backupRendType = GSYVideoType.getRenderType();
@@ -107,6 +116,28 @@ public class WebDetailActivity extends GSYBaseActivityDetail<StandardGSYVideoPla
         });
 
     }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void setData() {
+
+    }
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_web_detail);
+//
+//    }
 
     @Override
     protected void onDestroy() {
@@ -175,5 +206,10 @@ public class WebDetailActivity extends GSYBaseActivityDetail<StandardGSYVideoPla
         //增加title
         webPlayer.getTitleTextView().setVisibility(View.GONE);
         webPlayer.getBackButton().setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.mypubliclibrary.base.bean.EventMsg;
 import com.shuyu.gsyvideoplayer.GSYBaseADActivityDetail;
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder;
 import com.shuyu.gsyvideoplayer.listener.GSYVideoProgressListener;
@@ -28,10 +29,17 @@ public class DetailADPlayer2 extends GSYBaseADActivityDetail<NormalGSYVideoPlaye
     private String url = "http://9890.vod.myqcloud.com/9890_4e292f9a3dd011e6b4078980237cc3d3.f20.mp4";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_ad_player2);
+    public void onEvent(EventMsg message) {
 
+    }
+
+    @Override
+    protected int onRegistered() {
+        return R.layout.activity_detail_ad_player2;
+    }
+
+    @Override
+    protected void initView() {
         detailPlayer = (NormalGSYVideoPlayer) findViewById(R.id.detail_player);
         adPlayer = (GSYADVideoPlayer) findViewById(R.id.ad_player);
 
@@ -66,8 +74,31 @@ public class DetailADPlayer2 extends GSYBaseADActivityDetail<NormalGSYVideoPlaye
                 preSecond = currentSecond;
             }
         });
+    }
+
+    @Override
+    protected void initData() {
 
     }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void setData() {
+
+    }
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_detail_ad_player2);
+//
+//
+//
+//    }
 
     @Override
     public NormalGSYVideoPlayer getGSYVideoPlayer() {
@@ -149,6 +180,11 @@ public class DetailADPlayer2 extends GSYBaseADActivityDetail<NormalGSYVideoPlaye
         //增加title
         detailPlayer.getTitleTextView().setVisibility(View.VISIBLE);
         detailPlayer.getBackButton().setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
 

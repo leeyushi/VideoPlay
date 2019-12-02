@@ -23,6 +23,7 @@ import com.example.gsyvideoplayer.effect.GSYVideoGLViewCustomRender;
 import com.example.gsyvideoplayer.effect.PixelationEffect;
 import com.example.gsyvideoplayer.utils.CommonUtil;
 import com.example.gsyvideoplayer.video.SampleControlVideo;
+import com.example.mypubliclibrary.base.bean.EventMsg;
 import com.shuyu.gsyvideoplayer.GSYBaseActivityDetail;
 import com.shuyu.gsyvideoplayer.listener.GSYVideoGifSaveListener;
 import com.shuyu.gsyvideoplayer.render.view.GSYVideoGLView;
@@ -139,9 +140,17 @@ public class DetailFilterActivity extends GSYBaseActivityDetail<StandardGSYVideo
     private GifCreateHelper mGifCreateHelper;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_filter);
+    public void onEvent(EventMsg message) {
+
+    }
+
+    @Override
+    protected int onRegistered() {
+        return R.layout.activity_detail_filter;
+    }
+
+    @Override
+    protected void initView() {
         ButterKnife.bind(this);
 
         backupRendType = GSYVideoType.getRenderType();
@@ -257,6 +266,28 @@ public class DetailFilterActivity extends GSYBaseActivityDetail<StandardGSYVideo
             }
         });
     }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void setData() {
+
+    }
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_detail_filter);
+//
+//    }
 
     @Override
     public StandardGSYVideoPlayer getGSYVideoPlayer() {
@@ -503,6 +534,11 @@ public class DetailFilterActivity extends GSYBaseActivityDetail<StandardGSYVideo
             mTimerTask.cancel();
             mTimerTask = null;
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 
 
