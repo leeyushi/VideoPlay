@@ -40,7 +40,7 @@ public class DetailExoListPlayer extends GSYBaseActivityDetail<GSYExo2PlayerView
         setContentView(R.layout.activity_deatil_exo_list_player);
         ButterKnife.bind(this);
 
-        //GSYBaseActivityDetail 的 普通模式初始化
+        //GSYBaseActivityDetail 的 普通模式初始化  测试提交
         initVideo();
 
         List<GSYVideoModel> urls = new ArrayList<>();
