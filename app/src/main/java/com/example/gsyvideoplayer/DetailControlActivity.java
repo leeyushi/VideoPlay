@@ -19,6 +19,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.gsyvideoplayer.utils.CommonUtil;
 import com.example.gsyvideoplayer.utils.JumpUtils;
 import com.example.gsyvideoplayer.video.SampleControlVideo;
+import com.example.mypubliclibrary.base.bean.EventMsg;
 import com.shuyu.gsyvideoplayer.GSYBaseActivityDetail;
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder;
 import com.shuyu.gsyvideoplayer.listener.GSYVideoGifSaveListener;
@@ -90,9 +91,17 @@ public class DetailControlActivity extends GSYBaseActivityDetail<StandardGSYVide
     private float speed = 1;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_control);
+    public void onEvent(EventMsg message) {
+
+    }
+
+    @Override
+    protected int onRegistered() {
+        return R.layout.activity_detail_control;
+    }
+
+    @Override
+    protected void initView() {
         ButterKnife.bind(this);
 
         resolveNormalVideoUI();
@@ -164,6 +173,28 @@ public class DetailControlActivity extends GSYBaseActivityDetail<StandardGSYVide
             }
         });
     }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void setData() {
+
+    }
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_detail_control);
+//
+//    }
 
     @Override
     public StandardGSYVideoPlayer getGSYVideoPlayer() {
@@ -398,4 +429,8 @@ public class DetailControlActivity extends GSYBaseActivityDetail<StandardGSYVide
         DetailControlActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }

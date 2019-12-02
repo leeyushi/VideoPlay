@@ -1,11 +1,14 @@
 package com.example.gsyvideoplayer;
 
 import android.os.Bundle;
+
 import androidx.core.widget.NestedScrollView;
+
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.example.mypubliclibrary.base.bean.EventMsg;
 import com.shuyu.gsyvideoplayer.GSYBaseActivityDetail;
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder;
 import com.shuyu.gsyvideoplayer.video.base.GSYVideoPlayer;
@@ -38,9 +41,17 @@ public class DetailListPlayer extends GSYBaseActivityDetail<ListGSYVideoPlayer> 
     View next;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deatil_list_player);
+    public void onEvent(EventMsg message) {
+
+    }
+
+    @Override
+    protected int onRegistered() {
+        return R.layout.activity_deatil_list_player;
+    }
+
+    @Override
+    protected void initView() {
         ButterKnife.bind(this);
 
         //普通模式
@@ -92,6 +103,28 @@ public class DetailListPlayer extends GSYBaseActivityDetail<ListGSYVideoPlayer> 
     }
 
     @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void setData() {
+
+    }
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView();
+//
+//    }
+
+    @Override
     public ListGSYVideoPlayer getGSYVideoPlayer() {
         return detailPlayer;
     }
@@ -140,4 +173,8 @@ public class DetailListPlayer extends GSYBaseActivityDetail<ListGSYVideoPlayer> 
     }
 
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }

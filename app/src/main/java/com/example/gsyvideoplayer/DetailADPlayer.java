@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 
+import com.example.mypubliclibrary.base.bean.EventMsg;
 import com.shuyu.gsyvideoplayer.GSYBaseActivityDetail;
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder;
 import com.shuyu.gsyvideoplayer.listener.LockClickListener;
@@ -31,9 +32,17 @@ public class DetailADPlayer extends GSYBaseActivityDetail<ListGSYVideoPlayer> {
     RelativeLayout activityDetailPlayer;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_ad_player);
+    public void onEvent(EventMsg message) {
+
+    }
+
+    @Override
+    protected int onRegistered() {
+        return R.layout.activity_detail_ad_player;
+    }
+
+    @Override
+    protected void initView() {
         ButterKnife.bind(this);
 
         //普通模式
@@ -81,8 +90,30 @@ public class DetailADPlayer extends GSYBaseActivityDetail<ListGSYVideoPlayer> {
                 }
             }
         });
+    }
+
+    @Override
+    protected void initData() {
 
     }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void setData() {
+
+    }
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_detail_ad_player);
+//
+//
+//    }
 
     @Override
     public ListGSYVideoPlayer getGSYVideoPlayer() {
@@ -123,6 +154,11 @@ public class DetailADPlayer extends GSYBaseActivityDetail<ListGSYVideoPlayer> {
         //增加title
         detailPlayer.getTitleTextView().setVisibility(View.VISIBLE);
         detailPlayer.getBackButton().setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
 
