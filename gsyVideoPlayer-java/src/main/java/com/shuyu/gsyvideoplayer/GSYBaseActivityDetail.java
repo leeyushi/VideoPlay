@@ -4,7 +4,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.mypubliclibrary.base.BasesActivity;
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder;
 import com.shuyu.gsyvideoplayer.listener.VideoAllCallBack;
 import com.shuyu.gsyvideoplayer.utils.OrientationUtils;
@@ -16,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * 详情模式播放页面基础类
  * Created by guoshuyu on 2017/9/14.
  */
-public abstract class GSYBaseActivityDetail<T extends GSYBaseVideoPlayer> extends BasesActivity implements VideoAllCallBack {
+public abstract class GSYBaseActivityDetail<T extends GSYBaseVideoPlayer> extends AppCompatActivity implements VideoAllCallBack {
 
     protected boolean isPlay;
 

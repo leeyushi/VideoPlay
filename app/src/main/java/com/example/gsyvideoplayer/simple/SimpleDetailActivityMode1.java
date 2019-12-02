@@ -6,7 +6,6 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.gsyvideoplayer.R;
-import com.example.mypubliclibrary.base.bean.EventMsg;
 import com.shuyu.gsyvideoplayer.GSYBaseActivityDetail;
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
@@ -22,48 +21,18 @@ public class SimpleDetailActivityMode1 extends GSYBaseActivityDetail<StandardGSY
     private String url = "http://alvideo.ippzone.com/zyvd/98/90/b753-55fe-11e9-b0d8-00163e0c0248";
 
     @Override
-    public void onEvent(EventMsg message) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_simple_detail_player);
 
-    }
-
-    @Override
-    protected int onRegistered() {
-        return R.layout.activity_simple_detail_player;
-    }
-
-    @Override
-    protected void initView() {
         detailPlayer = (StandardGSYVideoPlayer) findViewById(R.id.detail_player);
         //增加title
         detailPlayer.getTitleTextView().setVisibility(View.GONE);
         detailPlayer.getBackButton().setVisibility(View.GONE);
 
         initVideoBuilderMode();
-    }
-
-    @Override
-    protected void initData() {
 
     }
-
-    @Override
-    protected void initListener() {
-
-    }
-
-    @Override
-    protected void setData() {
-
-    }
-
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_simple_detail_player);
-//
-//
-//
-//    }
 
     @Override
     public StandardGSYVideoPlayer getGSYVideoPlayer() {
@@ -117,8 +86,4 @@ public class SimpleDetailActivityMode1 extends GSYBaseActivityDetail<StandardGSY
                 .into(imageView);
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
 }

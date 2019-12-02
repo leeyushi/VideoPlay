@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.gsyvideoplayer.R;
-import com.example.mypubliclibrary.base.bean.EventMsg;
 import com.shuyu.gsyvideoplayer.GSYBaseActivityDetail;
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder;
 import com.shuyu.gsyvideoplayer.listener.LockClickListener;
@@ -36,17 +35,9 @@ public class DetailExoListPlayer extends GSYBaseActivityDetail<GSYExo2PlayerView
     View next;
 
     @Override
-    public void onEvent(EventMsg message) {
-
-    }
-
-    @Override
-    protected int onRegistered() {
-        return R.layout.activity_deatil_exo_list_player;
-    }
-
-    @Override
-    protected void initView() {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_deatil_exo_list_player);
         ButterKnife.bind(this);
 
         //GSYBaseActivityDetail 的 普通模式初始化
@@ -96,30 +87,8 @@ public class DetailExoListPlayer extends GSYBaseActivityDetail<GSYExo2PlayerView
                 GSYExoVideoManager.instance().next();
             }
         });
-    }
-
-    @Override
-    protected void initData() {
 
     }
-
-    @Override
-    protected void initListener() {
-
-    }
-
-    @Override
-    protected void setData() {
-
-    }
-
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_deatil_exo_list_player);
-//
-//
-//    }
 
 
 
@@ -187,8 +156,4 @@ public class DetailExoListPlayer extends GSYBaseActivityDetail<GSYExo2PlayerView
     }
 
 
-    @Override
-    public void onClick(View v) {
-
-    }
 }
