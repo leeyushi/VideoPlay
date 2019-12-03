@@ -256,7 +256,7 @@ public class DetailControlActivity extends GSYBaseActivityDetail<StandardGSYVide
      */
     @Override
     public boolean getDetailOrientationRotateAuto() {
-        return false;
+        return true;
     }
 
     //重载后关闭重力旋转
@@ -266,11 +266,11 @@ public class DetailControlActivity extends GSYBaseActivityDetail<StandardGSYVide
         orientationUtils.setEnable(false);
     }
 
-    //重载后不做任何事情，实现竖屏全屏
-    @Override
-    public void onQuitFullscreen(String url, Object... objects) {
-        super.onQuitFullscreen(url, objects);
-    }
+//    //重载后不做任何事情，实现竖屏全屏
+//    @Override
+//    public void onQuitFullscreen(String url, Object... objects) {
+//        super.onQuitFullscreen(url, objects);
+//    }
 
     /*******************************竖屏全屏结束************************************/
 

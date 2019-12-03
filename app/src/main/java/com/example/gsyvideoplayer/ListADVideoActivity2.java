@@ -3,7 +3,9 @@ package com.example.gsyvideoplayer;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.transition.Explode;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -224,6 +226,11 @@ public class ListADVideoActivity2 extends AppCompatActivity {
 
             holder.gsyVideoPlayer.setVideoAllCallBack(new GSYSampleCallBack() {
 
+                /**
+                 *  点击了开始播放按钮
+                 * @param url url
+                 * @param objects  objects[0]是title，object[1]是当前所处播放器（全屏或非全屏）
+                 */
                 @Override
                 public void onClickStartIcon(String url, Object... objects) {
                     super.onClickStartIcon(url, objects);
