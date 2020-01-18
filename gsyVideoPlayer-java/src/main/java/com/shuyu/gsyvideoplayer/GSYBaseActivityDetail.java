@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * 详情模式播放页面基础类
  * Created by guoshuyu on 2017/9/14.
  */
-public abstract class GSYBaseActivityDetail<T extends GSYBaseVideoPlayer> extends BasesActivity implements VideoAllCallBack {
+public abstract  class GSYBaseActivityDetail<T extends GSYBaseVideoPlayer>  extends BasesActivity implements VideoAllCallBack {
 
     protected boolean isPlay;
 

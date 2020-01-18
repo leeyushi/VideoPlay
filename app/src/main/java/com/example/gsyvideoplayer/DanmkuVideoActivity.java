@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.core.widget.NestedScrollView;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
@@ -192,7 +193,7 @@ public class DanmkuVideoActivity extends AppCompatActivity {
 
     private void getDanmu() {
         //下载demo然后设置
-        OkHttpUtils.get().url(TextUtils.concat("http://xingyuyou.com/Public/app/barragefile/","608","barrage.txt").toString())
+        OkHttpUtils.get().url(TextUtils.concat("http://xingyuyou.com/Public/app/barragefile/", "608", "barrage.txt").toString())
                 .build()
                 .execute(new FileCallBack(getApplication().getCacheDir().getAbsolutePath(), "barrage.txt")//
                 {
@@ -219,7 +220,7 @@ public class DanmkuVideoActivity extends AppCompatActivity {
 
     private GSYVideoPlayer getCurPlay() {
         if (danmakuVideoPlayer.getFullWindowPlayer() != null) {
-            return  danmakuVideoPlayer.getFullWindowPlayer();
+            return danmakuVideoPlayer.getFullWindowPlayer();
         }
         return danmakuVideoPlayer;
     }
